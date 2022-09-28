@@ -15,7 +15,6 @@ class Solution:
                     hash_table.pop(val)
                     val = queue.popleft()
                 queue.append(i)
-
             else:
                 hash_table[i] = 1
                 queue.append(i)
@@ -27,17 +26,25 @@ class Solution1:
         lengh = len(s)
         if len(s) == 0:
             return 0
+        if len(s) == 1:
+            return 1
         max_len = 0
         rk = 0
+        hash_table = dict()
         for i, symbol in enumerate(s):
-            hash_table = dict()
-
             while s[rk] not in hash_table:
                 if rk == lengh-1:
-                    break
+                    max_len = max(max_len, rk - i + 1)
+                    return max_len
                 hash_table[s[rk]] = 1
                 rk += 1
+            print(hash_table)
+            hash_table.pop(symbol)
             max_len = max(max_len, rk - i)
+            # print(i, rk)
+            # rk += 1
+            # if rk > lengh-1:
+            #     break
         return max_len
 
 
@@ -48,6 +55,6 @@ class Solution1:
 
 if __name__ == "__main__":
     solution1 = Solution1()
-    s = "abcabcbb"
+    s = "pq"
     max_len = solution1.lengthOfLongestSubstring(s)
     print(max_len)
