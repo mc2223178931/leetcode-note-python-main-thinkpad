@@ -13,7 +13,7 @@ class Solution:
                     return [i, j]
         return []
 # 哈希表
-# 遍历一遍数组，创建哈希表，然后查找哈希表中是否存在(target-x)元素 O(N)
+# 遍历一遍数组，创建哈希表，然后查找哈希表中是否存在(target-x)元素 O(N) 空间换时间
 class Solution1:
     def twoSum(self, nums, target: int):
         hashtable = dict()
