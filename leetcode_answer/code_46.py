@@ -17,7 +17,6 @@ class Solution:
                     print(i, path, res)
                     path.pop()
 
-
         size = len(nums)
         if size == 0:
             return []
@@ -33,6 +32,6 @@ class Solution:
 
 if __name__ == "__main__":
     solution1 = Solution()
-    nums = [1,2,3]
+    nums = [1, 2, 3]
     result_list = solution1.permute(nums)
     print(result_list)
