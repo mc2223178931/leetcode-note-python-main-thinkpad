@@ -1,3 +1,4 @@
+# 2335. 装满杯子需要的最短总时长 贪心
 class Solution:
     def fillCups(self, amount: List[int]) -> int:
         amount.sort()
